@@ -1,6 +1,7 @@
 *{
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0;
+    box-sizing: border-box;
 }
 h2{
     color: rgb(67, 193, 149);
@@ -8,14 +9,8 @@ h2{
 header{
     width:100%;
     padding: 10px;
-    background:transparent;
+    background-color: black;
     align-items: center;
     justify-content:space-around;
     display: flex;
-}
-  a:hover{
-    background-color: rgb(67, 193, 149);
-    border-radius: 10px;
-    text-align: right;
-
 }
