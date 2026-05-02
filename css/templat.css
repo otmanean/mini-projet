@@ -113,3 +113,97 @@ body {
     .hero { flex-direction: column-reverse; text-align: center; }
     .navbar ul { display: none; } /* On pourra ajouter un menu burger ici plus tard */
 }
+/* --- ########### page 1 about --- */
+/* --- SECTION ABOUT --- */
+/* --- PAGE ABOUT ME --- */
+/* --- CONFIGURATION GLOBALE --- */
+:root {
+    --bg-color: #1f242d;
+    --second-bg-color: #323946;
+    --text-color: #fff;
+    --main-color: #0ef;
+}
+
+/* --- SECTION ABOUT ME --- */
+.about {
+    margin: 30px ;
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center;     /* Centre verticalement */
+    min-height: 100vh;
+    background: var(--bg-color);
+    padding: 10rem 9% 2rem; /* Espace pour la navbar en haut */
+}
+
+.about-content {
+    width: 100%;
+    max-width: 800px; /* Empêche le texte de s'étaler trop largement */
+}
+
+.heading {
+    font-size: 4.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--text-color);
+}
+
+.heading span {
+    color: var(--main-color);
+}
+
+/* Boîtes de contenu (Education, Expérience, etc.) */
+.about-box {
+    background: var(--second-bg-color);
+    border-radius: 2rem;
+    padding: 2.5rem;
+    margin-bottom: 2.5rem;
+    border: 0.2rem solid transparent;
+    transition: 0.3s ease;
+}
+
+.about-box:hover {
+    border-color: var(--main-color);
+    transform: translateY(-5px); /* Petit effet de lévitation */
+}
+
+.about-box h3 {
+    font-size: 2.2rem;
+    color: var(--main-color);
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem; /* Espace entre l'icône et le texte */
+}
+
+/* Style de la Timeline (Lignes à gauche) */
+.timeline .item {
+    border-left: 0.2rem solid var(--main-color);
+    padding-left: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.timeline .item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline h4 {
+    font-size: 1.8rem;
+    color: var(--text-color);
+}
+
+.timeline p {
+    font-size: 1.3rem;
+    color: #ccc;
+    margin-top: 0.5rem;
+}
+
+/* Section Compétences */
+.about-box p {
+    font-size: 1.4rem;
+    line-height: 2;
+    color: var(--text-color);
+}
+
+.about-box p strong {
+    color: var(--main-color);
+}
