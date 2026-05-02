@@ -108,23 +108,6 @@ body {
     transform: scale(1.1);
 }
 
-/* Responsivité Mobile */
-@media (max-width: 768px) {
-    .hero { flex-direction: column-reverse; text-align: center; }
-    .navbar ul { display: none; } /* On pourra ajouter un menu burger ici plus tard */
-}
-/* --- ########### page 1 about --- */
-/* --- SECTION ABOUT --- */
-/* --- PAGE ABOUT ME --- */
-/* --- CONFIGURATION GLOBALE --- */
-:root {
-    --bg-color: #1f242d;
-    --second-bg-color: #323946;
-    --text-color: #fff;
-    --main-color: #0ef;
-}
-
-/* --- SECTION ABOUT ME --- */
 .about {
     margin: 30px ;
     display: flex;
@@ -207,3 +190,11 @@ body {
 .about-box p strong {
     color: var(--main-color);
 }
+/* Responsivité Mobile */
+@media (max-width: 768px) {
+    .hero { flex-direction: column-reverse; text-align: center; }
+    .navbar ul { display: none; } /* On pourra ajouter un menu burger ici plus tard */
+}
+/* --- ########### page 1 about --- */
+/* --- SECTION ABOUT --- */
+/* --- PAGE ABOUT ME --- */
