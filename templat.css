@@ -107,9 +107,8 @@ body {
     color: var(--text-color);
 }
 
-/* SECTION ABOUT - FORCE L'AFFICHAGE */
+/* SECTION ABOUT  */
 .about {
-    display: block !important; /* Force l'apparition */
     padding: 10rem 9% 5rem;
     background: var(--bg-color);
 }
@@ -163,4 +162,46 @@ body {
 
 .about-box strong {
     color: var(--main-color);
+}
+/* --- SECTION SKILLS --- */
+.skills {
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+    background: var(--bg-color);
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.skills-box {
+    background: var(--second-bg-color);
+    padding: 3rem 2rem;
+    border-radius: 2rem;
+    text-align: center;
+    border: 0.2rem solid transparent;
+    transition: 0.5s ease;
+}
+
+.skills-box:hover {
+    border-color: var(--main-color);
+    transform: scale(1.03);
+}
+
+.skills-box i {
+    font-size: 5rem;
+    color: var(--main-color);
+    margin-bottom: 1rem;
+}
+
+.skills-box h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.skills-box p {
+    font-size: 1.1rem;
+    line-height: 1.6;
 }
