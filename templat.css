@@ -85,3 +85,82 @@ body {
     .hero { flex-direction: column-reverse; text-align: center; }
     .navbar ul { display: none; } /* On pourra ajouter un menu burger ici plus tard */
 }
+/* RESET COMPLET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
+:root {
+    --bg-color: #1f242d;
+    --second-bg-color: #323946;
+    --text-color: #fff;
+    --main-color: #0ef;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* SECTION ABOUT - FORCE L'AFFICHAGE */
+.about {
+    display: block !important; /* Force l'apparition */
+    padding: 10rem 9% 5rem;
+    background: var(--bg-color);
+}
+
+.heading {
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.heading span {
+    color: var(--main-color);
+}
+
+/* BLOCS DE CONTENU */
+.about-box {
+    background: var(--second-bg-color);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-left: 0.5rem solid var(--main-color);
+}
+
+.about-box h3 {
+    font-size: 2rem;
+    color: var(--main-color);
+    margin-bottom: 1.5rem;
+}
+
+.timeline .item {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.timeline h4 {
+    font-size: 1.4rem;
+    color: var(--text-color);
+}
+
+.timeline p {
+    font-size: 1.1rem;
+    color: #aaa;
+}
+
+/* STYLES POUR LES COMPÉTENCES */
+.about-box p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+.about-box strong {
+    color: var(--main-color);
+}
