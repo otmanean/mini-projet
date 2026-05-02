@@ -1,4 +1,3 @@
-body { border: 10px solid red !important; }
 /* Couleurs et Reset */
 :root {
     --bg-color: #1f242d;
@@ -73,12 +72,40 @@ body {
 }
 
 /* Image Hexagone (Approximation) */
+.hero-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 400px;
+    /* Ajuste le pourcentage ci-dessous pour descendre ou monter ton visage */
+    object-position: center 20%; 
+    transition: transform .5s ease;
+}
 .hexagon {
-    position: relative;
-    width: 300px; height: 300px;
+    width: 300px;
+    height: 350px;
     background: var(--main-color);
-    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-    display: flex; justify-content: center; align-items: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    clip-path: polygon(
+        25% 5%, 
+        75% 5%, 
+        100% 50%, 
+        75% 95%, 
+        25% 95%, 
+        0% 50%
+    );
+
+    overflow: hidden;
+}
+
+.hexagon:hover .hero-img {
+    /* Petit effet de zoom quand on passe la souris */
+    transform: scale(1.1);
 }
 
 /* Responsivité Mobile */
