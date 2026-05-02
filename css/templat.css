@@ -1,16 +1,87 @@
-*{
-    margin: 0;
-    padding: 0;
+/* Couleurs et Reset */
+:root {
+    --bg-color: #1f242d;
+    --second-bg-color: #323946;
+    --text-color: #fff;
+    --main-color: #0ef; /* Le turquoise de l'image */
+}
+
+* {
+    margin: 0; padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    border: none; outline: none;
 }
-h2{
-    color: rgb(67, 193, 149);
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
 }
-header{
-    width:100%;
-    padding: 10px;
-    background-color: black;
-    align-items: center;
-    justify-content:space-around;
+
+/* Navbar */
+.navbar {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 9%;
+    background: var(--bg-color);
+}
+
+.navbar ul { display: flex; list-style: none; }
+.navbar ul li a {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-left: 3rem;
+    transition: .3s;
+}
+
+.navbar ul li a:hover, .navbar ul li a.active {
+    color: var(--main-color);
+}
+
+/* Hero Section Responsive */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 0 9%;
+}
+
+.hero-text h1 { font-size: 4rem; line-height: 1.2; }
+.highlight { color: var(--main-color); }
+
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem; height: 3rem;
+    background: transparent;
+    border: .2rem solid var(--main-color);
+    border-radius: 50%;
+    color: var(--main-color);
+    margin: 1rem 1rem 1rem 0;
+    transition: .5s ease;
+}
+
+.social-icons a:hover {
+    background: var(--main-color);
+    color: var(--second-bg-color);
+    box-shadow: 0 0 1rem var(--main-color);
+}
+
+/* Image Hexagone (Approximation) */
+.hexagon {
+    position: relative;
+    width: 300px; height: 300px;
+    background: var(--main-color);
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    display: flex; justify-content: center; align-items: center;
+}
+
+/* Responsivité Mobile */
+@media (max-width: 768px) {
+    .hero { flex-direction: column-reverse; text-align: center; }
+    .navbar ul { display: none; } /* On pourra ajouter un menu burger ici plus tard */
 }
