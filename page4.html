@@ -15,11 +15,84 @@
                 <li><a href="index.html" >Home</a></li>
                 <li><a href="page1.html">About me</a></li>
                 <li><a href="page2.html">hard Skills</a></li>
-                <li><a href="page3.html" class="active">soft skills</a></li>
-                <li><a href="page4.html">Contact me</a></li>
+                <li><a href="page3.html">soft skills</a></li>
+                <li><a href="page4.html" class="active">Contact me</a></li>
             </ul>
         </nav>
     </header>
-  
+
+    <section class="contact" id="contact">
+        <h2 class="heading">Contact <span>Me</span></h2>
+
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <h3>Let's work together!</h3>
+                <p>N'hésitez pas à me contacter pour un projet, un stage ou simplement pour échanger sur le développement.</p>
+                
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h4>Téléphone</h4>
+                        <p>+212 7 04 32 34 46</p> </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4>Email</h4>
+                        <p>otmaneanechade@gmail.com</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="fab fa-linkedin"></i>
+                    <div>
+                        <h4>LinkedIn</h4>
+                        <p><a href="https://www.linkedin.com/in/otmane-anechade-7b2b093bb" target="_blank">linkedin.com/in/otmane</a></p> </div>
+                </div>
+            </div>
+
+            <form action="#" class="contact-form" id="contactForm">
+                <div class="input-box">
+                    <input type="text" placeholder="Nom Complet" required>
+                    <input type="email" placeholder="Adresse Email" required>
+                </div>
+                <div class="input-box">
+                    <input type="number" placeholder="Numéro de Téléphone">
+                    <input type="text" placeholder="Sujet" required>
+                </div>
+                <textarea name="" id="" cols="30" rows="10" placeholder="Votre Message" required></textarea>
+                
+                <button type="submit" class="btn" id="submitBtn">Envoyer le Message</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            // Empêche la page de se recharger
+            event.preventDefault(); 
+            
+            // Récupère le bouton
+            const btn = document.getElementById('submitBtn');
+            
+            // Change le style du bouton
+            btn.innerHTML = 'Message Envoyé ! <i class="fas fa-check-circle"></i>';
+            btn.style.background = '#00ff4c'; // Devient vert
+            btn.style.color = '#1f242d';
+            btn.style.boxShadow = '0 0 1rem #00ff4c';
+            
+            // Vide le formulaire
+            this.reset();
+
+            // Remet le bouton normal après 3 secondes
+            setTimeout(() => {
+                btn.innerHTML = 'Envoyer le Message';
+                btn.style.background = 'var(--main-color)';
+                btn.style.boxShadow = '0 0 1rem var(--main-color)';
+            }, 3000);
+        });
+    </script>
+
 </body>
 </html>
