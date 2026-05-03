@@ -481,3 +481,37 @@ body {
         flex-direction: column; /* Les champs du formulaire l'un sous l'autre */
     }
 }
+/* --- CORRECTION DU CADRAGE DE L'IMAGE --- */
+.hexagon img {
+    /* Garde le conteneur plein */
+    width: 100%;
+    height: 100%;
+    
+    /* CRUCIAL : "contain" force l'image à être entièrement visible 
+       sans être découpée par les bords de l'hexagone. 
+       "cover" (ton code actuel) zoome et coupe. */
+    object-fit: contain;
+
+    /* OPTIONNEL : Ajuste la position verticale pour remonter ton visage 
+       si tes cheveux touchent le bord supérieur. 
+       "center center" est la valeur par défaut. Tu peux essayer 
+       "center 20%" pour remonter ton visage dans l'hexagone. */
+    object-position: center center;
+
+    /* Ne touche pas à ça, c'est pour l'hexagone */
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+@media (max-width: 768px) {
+    /* ... tes autres règles ... */
+
+    .hero-img .hexagon {
+        width: 280px; /* Taille légèrement plus grande pour mobile */
+        height: 280px;
+    }
+
+    .hexagon img {
+        /* Force le même cadrage "contain" sur mobile */
+        object-fit: contain; 
+        object-position: center center;
+    }
+}
