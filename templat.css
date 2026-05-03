@@ -418,3 +418,66 @@ body {
     width: 100%;
     border: none;
 }
+/* --- RESPONSIVITÉ MOBILE (Écrans < 768px) --- */
+@media (max-width: 768px) {
+    /* Ajustement de la section Hero (Accueil) */
+    .hero {
+        flex-direction: column-reverse; /* Met l'image au-dessus du texte */
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .hero-img .hexagon {
+        width: 250px; /* Réduit un peu la taille de l'image */
+        height: 250px;
+    }
+
+    .hero-text h1 {
+        font-size: 3rem; /* Texte un peu plus petit pour mobile */
+    }
+
+    /* Navigation */
+    .navbar {
+        padding: 1.5rem 5%;
+    }
+
+    nav ul {
+        display: flex;
+        flex-wrap: wrap; /* Permet aux liens de passer à la ligne */
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    nav ul li a {
+        font-size: 1.2rem;
+    }
+
+    /* Sections About, Skills et Contact */
+    .about, .skills, .soft-skills-sec, .contact {
+        padding: 8rem 5% 2rem; /* Réduit les marges sur les côtés */
+    }
+
+    .skills-row, .contact-wrapper {
+        flex-direction: column; /* Tout mettre sur une seule colonne */
+    }
+
+    .skills-column, .contact-info, .contact-form {
+        flex: 1 1 100%;
+        width: 100%;
+    }
+
+    .heading {
+        font-size: 3rem;
+    }
+}
+
+/* Ajustement spécifique pour les très petits écrans (< 450px) */
+@media (max-width: 450px) {
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+    
+    .contact-form .input-box {
+        flex-direction: column; /* Les champs du formulaire l'un sous l'autre */
+    }
+}
