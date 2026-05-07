@@ -515,3 +515,30 @@ body {
         object-position: center center;
     }
 }
+/* --- RESPONSIVITÉ MOBILE --- */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Aligne le logo et les liens verticalement */
+        padding: 1.5rem 5%;
+        height: auto;
+    }
+
+    nav ul {
+        display: flex;
+        flex-wrap: wrap; /* Permet aux liens de passer à la ligne si nécessaire */
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    nav ul li a {
+        font-size: 1.2rem; /* Taille de texte adaptée au tactile */
+    }
+
+    /* Ajustement de la section d'accueil pour mobile */
+    .hero {
+        flex-direction: column-reverse; /* Image au-dessus du texte */
+        text-align: center;
+        padding-top: 8rem;
+    }
+}
