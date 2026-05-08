@@ -28,18 +28,33 @@ body {
     background: var(--bg-color);
 }
 
-.navbar ul { display: flex; list-style: none; }
-.navbar ul li a {
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 9%;
+    background: var(--bg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap; /* CRUCIAL : permet aux liens de s'ajuster sans disparaître */
+    justify-content: flex-end;
+}
+
+nav ul li a {
     font-size: 1.2rem;
     color: var(--text-color);
-    margin-left: 3rem;
+    margin-left: 2rem;
     transition: .3s;
+    white-space: nowrap; /* Empêche un seul mot de se couper en deux */
 }
-
-.navbar ul li a:hover, .navbar ul li a.active {
-    color: var(--main-color);
-}
-
 /* Hero Section Responsive */
 .hero {
     display: flex;
@@ -419,66 +434,32 @@ body {
     border: none;
 }
 /* --- RESPONSIVITÉ MOBILE (Écrans < 768px) --- */
-@media (max-width: 768px) {
-    /* Ajustement de la section Hero (Accueil) */
-    .hero {
-        flex-direction: column-reverse; /* Met l'image au-dessus du texte */
-        text-align: center;
-        gap: 2rem;
-    }
-
-    .hero-img .hexagon {
-        width: 250px; /* Réduit un peu la taille de l'image */
-        height: 250px;
-    }
-
-    .hero-text h1 {
-        font-size: 3rem; /* Texte un peu plus petit pour mobile */
-    }
-
-    /* Navigation */
+@media (max-width: 991px) {
     .navbar {
         padding: 1.5rem 5%;
     }
-
-    nav ul {
-        display: flex;
-        flex-wrap: wrap; /* Permet aux liens de passer à la ligne */
-        justify-content: center;
-        gap: 1rem;
-    }
-
+    
+    /* Si la fenêtre est petite, on réduit l'espace entre les liens */
     nav ul li a {
-        font-size: 1.2rem;
-    }
-
-    /* Sections About, Skills et Contact */
-    .about, .skills, .soft-skills-sec, .contact {
-        padding: 8rem 5% 2rem; /* Réduit les marges sur les côtés */
-    }
-
-    .skills-row, .contact-wrapper {
-        flex-direction: column; /* Tout mettre sur une seule colonne */
-    }
-
-    .skills-column, .contact-info, .contact-form {
-        flex: 1 1 100%;
-        width: 100%;
-    }
-
-    .heading {
-        font-size: 3rem;
+        margin-left: 1rem;
+        font-size: 1.1rem;
     }
 }
 
-/* Ajustement spécifique pour les très petits écrans (< 450px) */
-@media (max-width: 450px) {
-    .hero-text h1 {
-        font-size: 2.5rem;
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Logo en haut, menu en bas sur très petit écran */
+        gap: 1rem;
     }
-    
-    .contact-form .input-box {
-        flex-direction: column; /* Les champs du formulaire l'un sous l'autre */
+
+    nav ul {
+        justify-content: center;
+        width: 100%;
+    }
+
+    /* On ajoute de l'espace en haut de la section pour ne pas que le titre passe sous la navbar */
+    .soft-skills-sec, .about, .skills, .contact {
+        padding-top: 12rem; 
     }
 }
 /* --- CORRECTION DU CADRAGE DE L'IMAGE --- */
@@ -500,45 +481,4 @@ body {
 
     /* Ne touche pas à ça, c'est pour l'hexagone */
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-}
-@media (max-width: 768px) {
-    /* ... tes autres règles ... */
-
-    .hero-img .hexagon {
-        width: 280px; /* Taille légèrement plus grande pour mobile */
-        height: 280px;
-    }
-
-    .hexagon img {
-        /* Force le même cadrage "contain" sur mobile */
-        object-fit: contain; 
-        object-position: center center;
-    }
-}
-/* --- RESPONSIVITÉ MOBILE --- */
-@media (max-width: 768px) {
-    .navbar {
-        flex-direction: column; /* Aligne le logo et les liens verticalement */
-        padding: 1.5rem 5%;
-        height: auto;
-    }
-
-    nav ul {
-        display: flex;
-        flex-wrap: wrap; /* Permet aux liens de passer à la ligne si nécessaire */
-        justify-content: center;
-        gap: 1rem;
-        margin-top: 1rem;
-    }
-
-    nav ul li a {
-        font-size: 1.2rem; /* Taille de texte adaptée au tactile */
-    }
-
-    /* Ajustement de la section d'accueil pour mobile */
-    .hero {
-        flex-direction: column-reverse; /* Image au-dessus du texte */
-        text-align: center;
-        padding-top: 8rem;
-    }
 }
